@@ -17,6 +17,7 @@ export default new Vuex.Store({
       "community"
     ],
     events: [],
+    eventsTotal: 0,
     event: {}
   },
   mutations: {
