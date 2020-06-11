@@ -4,6 +4,10 @@ import router from "./router";
 import store from "./store";
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
+import BaseIcon from "@/components/BaseIcon";
+import "nprogress/nprogress.css";
+
+Vue.component("BaseIcon", BaseIcon);
 
 const requireComponent = require.context(
   "./components",
