@@ -1,28 +1,31 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-import upperFirst from "lodash/upperFirst";
-import camelCase from "lodash/camelCase";
-import BaseIcon from "@/components/BaseIcon";
-import "nprogress/nprogress.css";
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+import upperFirst from 'lodash/upperFirst';
+import camelCase from 'lodash/camelCase';
+import BaseIcon from '@/components/BaseIcon';
+import 'nprogress/nprogress.css';
+import Vuelidate from 'vuelidate';
 
-Vue.component("BaseIcon", BaseIcon);
+Vue.use(Vuelidate);
+
+Vue.component('BaseIcon', BaseIcon);
 
 const requireComponent = require.context(
-  "./components",
+  './components',
   false,
   /Base[A-Z]\w+\.(vue|js)$/
 );
 
-requireComponent.keys().forEach(fileName => {
-  const componentConfig = requireComponent(fileName)
+requireComponent.keys().forEach((fileName) => {
+  const componentConfig = requireComponent(fileName);
   const componentName = upperFirst(
     camelCase(
       fileName
-        .split("/")
+        .split('/')
         .pop()
-        .replace(/\.\w+$/, "")
+        .replace(/\.\w+$/, '')
     )
   );
   Vue.component(componentName, componentConfig.default || componentConfig);
@@ -33,5 +36,5 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
-  render: h => h(App)
-}).$mount("#app");
+  render: (h) => h(App)
+}).$mount('#app');

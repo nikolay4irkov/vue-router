@@ -2,7 +2,13 @@
   <div>
     <label v-if="label">{{ label }}</label>
     <select :value="value" @input="updateValue" v-bind="$attrs">
-      <option v-for="option in options" :key="option" :selected="option === value">{{ option }}</option>
+      <option
+        v-for="option in options"
+        :key="option"
+        :selected="option === value"
+      >
+        {{ option }}
+      </option>
     </select>
   </div>
 </template>
@@ -13,7 +19,7 @@ export default {
   props: {
     label: {
       type: String,
-      default: ""
+      default: ''
     },
     value: [String, Number],
     options: {
@@ -23,11 +29,10 @@ export default {
   },
   methods: {
     updateValue(event) {
-      this.$emit("input", event.target.value);
+      this.$emit('input', event.target.value);
     }
   }
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

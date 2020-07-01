@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
 export default {
   props: {
     notification: {
@@ -29,7 +29,7 @@ export default {
       return `-text-${this.notification.type}`;
     }
   },
-  methods: mapActions("notification", ["remove"])
+  methods: mapActions('notification', ['remove'])
 };
 </script>
 

@@ -11,17 +11,16 @@ export default {
   props: {
     label: {
       type: String,
-      default: ""
+      default: ''
     },
     value: [String, Number]
   },
   methods: {
     updateValue(event) {
-      this.$emit("input", event.target.value);
+      this.$emit('input', event.target.value);
     }
   }
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
